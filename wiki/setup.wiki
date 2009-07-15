@@ -1,0 +1,9 @@
+#summary how to setup correctly this plugin
+#labels Phase-Implementation,Phase-Deploy
+= Introduction =
+
+This guide will help you to seup and use correctly the BarcodeListener plugin for jQuery.
+
+= Setup =
+== Download ==
+First of all download the [http://code.google.com/p/jqueryjs/downloads/list last version of jQuery] and the [http://code.google.com/p/jquery-barcodelistener/downloads/list last version of BarcodeListener].
