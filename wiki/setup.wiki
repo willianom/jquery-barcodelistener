@@ -60,7 +60,7 @@ To call the plugin use this code:
     });
 </script>
 }}}
-The option _characters_ is an array made of array. The right way to set up it is:
+The option _characters_ is an array made of arrays. The right way to set up it is:
 {{{
 <script type="text/javascript">
 char0 = new Array("§", "32");
