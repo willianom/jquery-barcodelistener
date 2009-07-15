@@ -1,14 +1,6 @@
 #summary how to setup correctly this plugin
 #labels Phase-Implementation,Phase-Deploy
 #sidebar TableOfContents
-* [Setup_the_scanner Setup the scanner]
-* [Setup_the_plugin Setup the plugin]
-  * [Download Download]
-  * [Include Include]
-  * [Find_your_way Find your way]
-    * Wizard
-    * [Setting_the_plugin_your_own Setting the plugin your own]
-  * [Test Test]
 = Introduction =
 
 This guide will help you to seup and use correctly the BarcodeListener plugin for jQuery.
