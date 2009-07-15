@@ -1,11 +1,9 @@
 #summary how to setup correctly this plugin
 #labels Phase-Implementation,Phase-Deploy
-#sidebar TableOfContents
+<wiki:toc max_depth="3" />
 = Introduction =
 
 This guide will help you to seup and use correctly the BarcodeListener plugin for jQuery.
-
-<wiki:toc max_depth="2" />
 
 #sidebar TableOfContents 
 * [Setup_the_scanner Setup the scanner]
