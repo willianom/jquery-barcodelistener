@@ -7,3 +7,40 @@ This guide will help you to seup and use correctly the BarcodeListener plugin fo
 = Setup =
 == Download ==
 First of all download the [http://code.google.com/p/jqueryjs/downloads/list last version of jQuery] and the [http://code.google.com/p/jquery-barcodelistener/downloads/list last version of BarcodeListener].
+
+*Interesting links for this section:*
+    * jQuery Starterkit
+    * Downloading jQuery 
+
+
+== Include ==
+Now you have to include the scripts in your HTML document. The code is:
+{{{
+<script type="text/javascript" src="[URL to jQuery code]"></script>
+<script type="text/javascript" src="[URL to BarcodeListener code]"></script>
+}}}
+
+== Setup ==
+=== Setup the scanner ===
+There are two ways to setup the plugin:
+    * using the wizard (for beginners);
+    * setting the plugin your own (for experts);
+
+==== Setting the plugin your own ====
+To call the plugin use this code:
+{{{
+<script type="text/javascript">
+    $(document).ready(function() {
+	char0 = new Array("§", "32");
+	char1 = new Array("˜", "732");
+	char3 = new Array("§", "32");
+	char2 = new Array("˜", "732");
+	characters = new Array(char0, char1, char2, char3);
+	$(document).BarcodeListener(characters, function(code) {
+	    // YOUR FUNCTION HERE
+            // for example:
+            alert(code);
+	});
+    });
+</script>
+}}}
