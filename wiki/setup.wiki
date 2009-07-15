@@ -4,6 +4,7 @@
 
 This guide will help you to seup and use correctly the BarcodeListener plugin for jQuery.
 
+#sidebar TableOfContents 
 * [Setup_the_scanner Setup the scanner]
 * [Setup_the_plugin Setup the plugin]
   * [Download Download]
