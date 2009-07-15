@@ -34,8 +34,8 @@ Now you have to include the scripts in your HTML document. The code is:
 
 == Find your way ==
 There are two ways to setup the plugin:
-    * using the wizard (for beginners);
-    * setting the plugin your own (for experts);
+    * using the wizard (for beginners) (*under contruction*);
+    * [#Setting_the_plugin_your_own setting the plugin your own] (for experts).
 
 === Setting the plugin your own ===
 To call the plugin use this code:
@@ -75,7 +75,9 @@ That's all! Your code should be like this:
 	char1 = new Array("˜", "732");
 	characters = new Array(char0, char1);
 	$(document).BarcodeListener(characters, function(code) {
-	    alert(code);
+	    // YOUR FUNCTION HERE
+            // for example:
+            alert(code);
 	});
     });
 </script>
