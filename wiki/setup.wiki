@@ -4,13 +4,24 @@
 
 This guide will help you to seup and use correctly the BarcodeListener plugin for jQuery.
 
-= Setup =
+= Setup the scanner =
+It is important to setup correctly your barcode scanner.
+First of all you have to add some header characters to the output before the code. Most of scanners should do it. For example I set my scanner the header:
+{{{
+§~
+}}}
+these are not common characters. I did that because the BarcodeListener plugin listen every input but catch only the one that start whith these characters; so do not use letters or number that are really common when you write something.
+
+The last point is to set the scanner to hit the ENTER button after the code to let the plugin read the code and lauch the user's function.
+
+= Setup the plugin =
+
 == Download ==
 First of all download the [http://code.google.com/p/jqueryjs/downloads/list last version of jQuery] and the [http://code.google.com/p/jquery-barcodelistener/downloads/list last version of BarcodeListener].
 
 *Interesting links for this section:*
-    * jQuery Starterkit
-    * Downloading jQuery 
+    * [http://code.google.com/p/jqueryjs/downloads/list last version of jQuery]
+    * [http://code.google.com/p/jquery-barcodelistener/downloads/list last version of BarcodeListener]
 
 
 == Include ==
@@ -20,13 +31,13 @@ Now you have to include the scripts in your HTML document. The code is:
 <script type="text/javascript" src="[URL to BarcodeListener code]"></script>
 }}}
 
-== Setup ==
-=== Setup the scanner ===
+
+== Find your way ==
 There are two ways to setup the plugin:
     * using the wizard (for beginners);
     * setting the plugin your own (for experts);
 
-==== Setting the plugin your own ====
+=== Setting the plugin your own ===
 To call the plugin use this code:
 {{{
 <script type="text/javascript">
