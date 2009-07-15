@@ -75,7 +75,7 @@ For every character you have to make an array with two elements:
 You can add a lot of header characters: there's no limit!
 
 
-== Test ==
+= Test =
 That's all! Your code should be like this:
 {{{
 <script type="text/javascript" src="_javascript/jquery-1.3.2.js"></script>
