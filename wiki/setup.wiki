@@ -86,4 +86,4 @@ That's all! Your code should be like this:
 Try and use it!
 
 =Contacts=
-For any problem send a message to the Discussion Group, I will reply as quick as possible!
+For any problem send a message to the [http://groups.google.com/group/jquery-barcodelistener Discussion group], I will reply as quick as possible!
