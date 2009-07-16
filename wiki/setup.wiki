@@ -83,4 +83,7 @@ That's all! Your code should be like this:
     });
 </script>
 }}}
-It should work, but *for any problem leave a comment in the error page*!
+Try and use it!
+
+=Contacts=
+For any problem send a message to the Discussion Group, I will reply as quick as possible!
