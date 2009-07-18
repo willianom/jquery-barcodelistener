@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>wizard @ jquery-barcodelistener</title>
+		<style>
+			@charset "UTF-8";
+			/* ***** RESET ***** */
+			/*
+			Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+			Code licensed under the BSD License:
+			http://developer.yahoo.net/yui/license.txt
+			version: 2.7.0
+			*/
+			html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{font-size:100%;}
+			/* ***** /RESET ***** */
+			
+			/* ***** ALIGN ***** */
+			.left {
+				text-align: left;
+			}
+			
+			.right {
+				text-align: right;
+			}
+			
+			.center {
+				text-align: center;
+			}
+			
+			.justify {
+				text-align: justify;
+			}
+			/* ***** /ALIGN ***** */
+			
+			/* ***** FONT ***** */
+			.sansserif  { font-family: Verdana, Arial, Helvetica, Geneva, "Lucida Sans Unicode", "Lucida Grande", Tahoma, Kalimati, Garuda, Utkal, "Nimbus Sans L", FreeSans, Malayalam, "Phetsarath OT", "Gargi_1.7", Jamrul, "Mukti Narrow", Loma, sans-serif }
+			
+			.serif   { font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, "Nimbus Roman No9 L", "Century Schoolbook L", Norasi, Rekha, Likhan, FreeSerif, "Bitstream Vera Serif", "DejaVu Serif", aakar, Gentium, serif; }
+			
+			.cursive  { font-family: "Zapf Chancery", "Comic Sans", "Comic Sans MS", Coronetscript, Florence, Parkavenue, "TSCu_Comic", cursive }
+			
+			.monospace  { font-family: "Courier New", Courier, "Lucida Console", Monaco, FreeMono, "Nimbus Mono L", monospace }
+			/* ***** /FONT ***** */
+			
+			/* ***** CLEAR ***** */
+			.clear {
+				clear: both;
+			}
+			/* ***** /CLEAR ***** */
+			
+			body {padding:50px}
+			h1{font-size:400%; font-weight:bold}
+			legend{font-size:200%; font-weight:bold}
+			fieldset{border:medium #000 solid; padding:10px; margin-top:50px;}
+        </style>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+		</script>
+        <script type="text/javascript">
+			$(document).ready(function() {
+				loc = location.href;
+				$("#fire").val("");
+				eventcode = new Array();
+				x = 0;
+				$("#fireform").keypress(function(e){
+					eventcode[x] = e.which;
+					x++;
+				});
+				$("#fireform").submit(function(){
+					$("#check").html("");
+					fire = $("#fire").val();
+					$("#fire").val("");
+					z = eventcode.length - fire.length-1;
+					for (y=0; y<fire.length; y++) {
+						$("#check").append("<label><input type=\"checkbox\" name=\"eventcode\" value=\""+fire[y]+"|"+eventcode[z]+"\" id=\"eventcode"+y+"\" /> <b>"+fire[y]+"</b>  [eventcode "+eventcode[z]+"]</label><br />");
+						z++;
+					}
+					location.href = loc+"#select";
+					return false;
+				});
+				$("#checkform").submit(function(){
+					var val = [];
+    				$(':checkbox:checked').each(function(i){
+      					val[i] = $(this).val();
+    				});
+					code = "<script type=\"text/javascript\" src=\"URL to jQuery\"><\/script>\n<script type=\"text/javascript\" src=\"URL to BarcodeListener\"><\/script>\n<script type=\"text/javascript\">\n$(document).ready(function() {";
+					array = "characters = new Array(";
+					for(a=0; a<val.length; a++) {
+						elemento = val[a].split("|");
+						code = code+"\nchar"+a+" = new Array(\""+elemento[0]+"\", \""+elemento[1]+"\");";
+						if (a == 0) {
+							array = array+"char"+a;
+						} else {
+							array = array+", char"+a;
+						}
+					}
+					code = code+"\n"+array+");\n$(document).BarcodeListener(characters, function(code) {\n//YOUR FUNCTION HERE\n//fore example\nalert(code);\n});\n});\n<\/script>";
+					$("#code").val(code);
+					location.href = loc+"#copy";
+					$("#code").select();
+					return false;
+				});
+			});
+        </script>
+    </head>
+
+	<body class="sansserif">
+		<h1>Wizard</h1>
+        <p>To setup easily the plugin please follow these steps.<br />If the code of the wizard doesn't work, reload the page.<br />For any problem, read the <a href="http://code.google.com/p/jquery-barcodelistener/wiki/setup">wiki</a> or send a message to the <a href="http://groups.google.com/group/jquery-barcodelistener">Discussion group</a>.</p>
+        <fieldset>
+        	<legend>fire</legend>
+        	<p>
+            	Fire the output of the barcode scanner in the input box below.
+            </p>
+            <form id="fireform">
+            	<input name="fire" type="text" id="fire" />
+            </form>
+        </fieldset>
+        <fieldset>
+        	<legend><a name="select">select</a></legend>
+        	<p>
+            	Select which are the header characters.
+            </p>
+            <form id="checkform">
+           	  <p id="check">
+          	  </p>
+              <br />
+              <input name="" type="submit" />
+            </form>
+        </fieldset>
+        <fieldset>
+        	<legend><a name="copy">copy and paste</a></legend>
+       	  <p>
+            	Copy the code below, modify the URLs to jQuery's file and BarcodeListener's file and paste it after the <i>header</i> HTML tag.
+            </p>
+			<textarea class="monospace" style="font-size:80%" name="" cols="100" rows="15" id="code"></textarea>
+            <p>
+            	Enjoy your self!
+            </p>
+        </fieldset>
+    </body>
+</html>
