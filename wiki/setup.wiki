@@ -35,7 +35,7 @@ Now you have to include the scripts in your HTML document. The code is:
 
 == Find your way ==
 There are two ways to setup the plugin:
-    * using the wizard (for beginners) (*under contruction*);
+    * [http://www.gregoriopellegrino.com/jquery-barcodelistener/ using the wizard] (for beginners);
     * [#Setting_the_plugin_your_own setting the plugin your own] (for experts).
 
 === Setting the plugin your own ===
